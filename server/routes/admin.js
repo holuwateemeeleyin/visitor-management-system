@@ -2,10 +2,7 @@ const express = require ('express')
 const router = express.Router();
 
 const {Admin} = require('./../models/admin')
-<<<<<<< HEAD
 const {auth} = require('./../middleware/auth')
-=======
->>>>>>> 66c00ee90a76a95026c064a4df4298f692f94ffe
 
 // POST for Registering Admin
 router.post ('/register', (req,res)=> {
@@ -14,11 +11,7 @@ router.post ('/register', (req,res)=> {
         if(err) return res.status(400).send(err)
         res.status(200).json ({
             post:true,
-<<<<<<< HEAD
             adminID:doc._id
-=======
-            admin:doc
->>>>>>> 66c00ee90a76a95026c064a4df4298f692f94ffe
         })
     })
 })
@@ -32,7 +25,6 @@ router.get('/admins', (req, res)=> {
     })
 })
 
-<<<<<<< HEAD
 router.post('/login', (req,res)=> {
     Admin.findOne({'adminId': req.body.adminId},(err, admin)=>{
         if(!admin) return res.json ({isAuth:false, message: 'Auth failed. AdminId not found'})
@@ -76,6 +68,4 @@ router.get('/auth', auth, (req, res)=>{
 })
 
 
-=======
->>>>>>> 66c00ee90a76a95026c064a4df4298f692f94ffe
 module.exports = router

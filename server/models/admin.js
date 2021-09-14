@@ -5,11 +5,7 @@ const SALT_I = 10;
 const config = require('./../config/config').get(process.env.NODE_ENV);
 
 const adminSchema = mongoose.Schema ({
-<<<<<<< HEAD
     adminId : {
-=======
-    username : {
->>>>>>> 66c00ee90a76a95026c064a4df4298f692f94ffe
         type: String,
         required: true,
         unique: 1,
@@ -30,7 +26,6 @@ const adminSchema = mongoose.Schema ({
 
 })
 
-<<<<<<< HEAD
 adminSchema.pre('save', function(next){
     var admin = this;
     
@@ -101,8 +96,6 @@ adminSchema.methods.deleteToken = function(token,cb){
 }
 
 
-=======
->>>>>>> 66c00ee90a76a95026c064a4df4298f692f94ffe
 const Admin = mongoose.model('Admin', adminSchema)
 
 module.exports = { Admin }

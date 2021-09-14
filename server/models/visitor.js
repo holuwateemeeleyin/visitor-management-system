@@ -19,10 +19,7 @@ const visitorSchema = mongoose.Schema ({
     email: {
         type: String,
         required: true,
-<<<<<<< HEAD
-=======
         unique:1,
->>>>>>> 66c00ee90a76a95026c064a4df4298f692f94ffe
         trim:true
     },
     purpose: {
@@ -35,7 +32,6 @@ const visitorSchema = mongoose.Schema ({
         required:true,
         trim:true
     },
-<<<<<<< HEAD
     checkIn:{
         type:Date,
         default: Date.now
@@ -47,17 +43,11 @@ const visitorSchema = mongoose.Schema ({
         type: String,
         default:'In'
     },
-=======
->>>>>>> 66c00ee90a76a95026c064a4df4298f692f94ffe
     token: {
         type:String
     }
 }, {timestamps:true})
-
-<<<<<<< HEAD
 let timeStamp = Date.now
-=======
->>>>>>> 66c00ee90a76a95026c064a4df4298f692f94ffe
 // For generating token
 visitorSchema.methods.generateToken = function (cb) {
     var visitor = this;

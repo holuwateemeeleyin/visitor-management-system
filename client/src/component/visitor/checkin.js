@@ -80,7 +80,6 @@ class Checkin extends PureComponent {
         console.log(this.props);
         return (
             <div>
-
                 <div className="login-root">
                     <div className="box-root flex-flex flex-direction--column">
                         <div className="loginbackground box-background--white padding-top--64">

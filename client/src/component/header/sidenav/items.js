@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faSignInAlt, faSignOutAlt, faFileAlt, faPeopleArrows, faPeopleCarry, faPowerOff, faUser, faUserAlt, faUserAltSlash, faUserAstronaut, faUserCheck, faUserCircle, faUserCog, faUserEdit, faUserInjured, faUserLock, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSignInAlt, faSignOutAlt, faUserAlt, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux'
 
 const SideNavItems = ({admin}) => {
@@ -18,22 +18,40 @@ const SideNavItems = ({admin}) => {
             text: "Checkin",
             link: "/checkin",
             icon: faSignInAlt,
-            restricted: false
+            restricted: false,
+            exclude:true
         },
         {
             type: 'navItem',
             text: "Checkout",
             link: "/checkout",
             icon: faSignOutAlt,
-            restricted: false
+            restricted: false,
+            exclude:true
         },
         {
             type: 'navItem',
             text: "Admin",
-            link: "/admin",
+            link: "/profile",
             icon: faUserAlt,
+            restricted: false,
+            exclude:true
+        },
+        {
+            type: 'navItem',
+            text: "Visitors",
+            link: "/visitors",
+            icon: faUsers,
+            restricted: true
+        },
+        {
+            type: 'navItem',
+            text: "Logout",
+            link: "/logout",
+            icon: faSignOutAlt,
             restricted: true
         }
+
     ]
     
     const element = (item, i) => (
@@ -46,9 +64,20 @@ const SideNavItems = ({admin}) => {
     )
 
     const showItems = () => (
-        items.map((item, i) => {
-            return element(item, i)
-        })
+        admin.login ?
+            items.map((item, i) => {
+                if(admin.login.isAuth){
+                    return !item.exclude ?
+                        element(item, i)
+                    :null
+                } else {
+                    return !item.restricted ?
+                        element(item,i)
+                    :null
+                }
+                // return element(item, i)
+            })
+        :null
     )
     return (
         <div>

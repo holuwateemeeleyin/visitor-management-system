@@ -15,23 +15,24 @@ class VisitorDetails extends Component {
     componentWillMount() {
         this.props.dispatch(getVisitors())
     }
-    // show visitors
-    showVisitors = (visitors) => (
-        visitors.visitors ?
-            visitors.visitors.map(visitor => (
-                <tr key={visitor._id}>
-                    <td>{visitor.name}</td>
-                    <td>{visitor.email}</td>
-                    <td>{visitor.phone}</td>
-                    <td>{moment(visitor.checkIn).format('h:mm a, MMMM Do YYYY')}</td>
-                    <td>{visitor.purpose}</td>
-                    <td>{visitor.status}</td>
-                    <td>{visitor.visitorHost}</td>
-                    <td>{(visitor.checkout)}</td>
-                </tr>
-            ))
-            : null
-    )
+    
+    // // show visitors
+    // showVisitors = (visitors) => (
+    //     visitors.visitors ?
+    //         visitors.visitors.map(visitor => (
+    //             <tr key={visitor._id}>
+    //                 <td>{visitor.name}</td>
+    //                 <td>{visitor.email}</td>
+    //                 <td>{visitor.phone}</td>
+    //                 <td>{moment(visitor.checkIn).format('h:mm a, MMMM Do YYYY')}</td>
+    //                 <td>{visitor.purpose}</td>
+    //                 <td>{visitor.status}</td>
+    //                 <td>{visitor.visitorHost}</td>
+    //                 <td>{(visitor.checkout)}</td>
+    //             </tr>
+    //         ))
+    //         : null
+    // )
 
     // update query if a string is searched
     updateQuery = (query) => {
@@ -58,7 +59,6 @@ class VisitorDetails extends Component {
             ))
         return (
             <div className="container">
-                <div>
                     <input
                         className="search-contacts"
                         type="text"
@@ -66,7 +66,6 @@ class VisitorDetails extends Component {
                         placeholder="Search by Name"
                         onChange={(event) => this.updateQuery(event.target.value)}
                     />
-                </div>
                 <h1 className="tableHeading"> Visitors List</h1>
 
                 <table className="visitors">
@@ -95,7 +94,7 @@ class VisitorDetails extends Component {
                                     <td>{moment(visitor.checkIn).format('h:mm a, MMMM Do YYYY')}</td>
                                     <td>{visitor.purpose}</td>
                                     <td>{visitor.status}</td>
-                                    <td>{visitor.host}</td>
+                                    <td>{visitor.visitorHost}</td>
                                     <td>{visitor.checkout ? moment(visitor.checkout).format('h:mm a, MMMM Do YYYY') :
                                         null
                                     }</td>

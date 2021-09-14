@@ -6,7 +6,7 @@ import Nav from './sidenav/sidenav'
 
 class Header extends Component {
     state = {
-        showNav: true
+        showNav: false
     }
     onHideNav = () => {
         this.setState({ showNav: false })

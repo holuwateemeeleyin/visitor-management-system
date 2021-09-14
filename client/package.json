@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
@@ -19,7 +18,6 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-simple-sidenav": "^2.0.0",
-=======
     "axios": "^0.21.1",
     "cra-template": "1.1.2",
     "react": "^17.0.2",
@@ -27,7 +25,6 @@
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
->>>>>>> 66c00ee90a76a95026c064a4df4298f692f94ffe
     "redux": "^4.1.1",
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.3.0"

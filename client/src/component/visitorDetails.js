@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getVisitors } from './action'
 import moment from 'moment'
-import { Container } from 'react-bootstrap'
 class VisitorDetails extends Component {
 
     state = {

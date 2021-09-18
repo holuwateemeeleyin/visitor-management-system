@@ -1,8 +1,12 @@
+const path = require('path')
+const dotenv =require ('dotenv')
+dotenv.config({path: path.resolve(__dirname, './.env')})
+
 const mongoose = require ('mongoose')
 const bcrypt = require ('bcrypt')
 const jwt = require ('jsonwebtoken')
 const SALT_I = 10;
-const config = require('./../config/config').get(process.env.NODE_ENV);
+// const config = require('./../config/config').get(process.env.NODE_ENV);
 
 const adminSchema = mongoose.Schema ({
     adminId : {
@@ -55,7 +59,7 @@ adminSchema.methods.comparePassword = function(adminPassword,cb){
 // Generate token when entered the right password
 adminSchema.methods.generateToken = function(cb){
     var admin = this;
-    var token = jwt.sign(admin._id.toHexString(), config.SECRET);
+    var token = jwt.sign(admin._id.toHexString(), process.env.SECRET);
     // store the token inside the admin
     admin.token = token;
     admin.save(function (err, admin) {
@@ -73,7 +77,7 @@ adminSchema.statics.findByToken = function (token, cb){
     // if we decode the token, we will get the admin._id
 
     // the verify returns the adminId if the token is correct
-    jwt.verify(token,config.SECRET, function(err, decode){
+    jwt.verify(token,process.env.SECRET, function(err, decode){
         // if everything gets decoded correctly, we want to grab the admin id
         //we will be finding the admin by ID and by token
         admin.findOne({"_id":decode, "token":token}, function(err, admin){

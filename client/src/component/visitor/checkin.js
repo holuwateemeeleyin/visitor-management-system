@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { createVisitor, getVisitors } from '../action'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 class Checkin extends PureComponent {
     state = {
         name: "",

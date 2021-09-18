@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { visitorCheckout } from '../action'
-import Alert from 'react-bootstrap/Alert'
 class Checkout extends PureComponent {
     state = {
         email: "",

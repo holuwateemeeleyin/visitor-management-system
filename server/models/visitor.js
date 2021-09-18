@@ -1,7 +1,11 @@
+const path = require('path')
+const dotenv =require ('dotenv')
+dotenv.config({path: path.resolve(__dirname, './.env')})
+
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const config = require('./../config/config').get(process.env.NODE_ENV);
+// const config = require('./../config/config').get(process.env.NODE_ENV);
 const SALT_I = 10;
 
 const visitorSchema = mongoose.Schema ({
@@ -51,7 +55,8 @@ let timeStamp = Date.now
 // For generating token
 visitorSchema.methods.generateToken = function (cb) {
     var visitor = this;
-    var token = jwt.sign(visitor._id.toHexString(), config.SECRET);
+    // var token = jwt.sign(visitor._id.toHexString(), config.SECRET);
+    var token = jwt.sign(visitor._id.toHexString(), process.env.SECRET);
 
     visitor.token = token;
     visitor.save(function(err, visitor){
@@ -64,7 +69,8 @@ visitorSchema.methods.generateToken = function (cb) {
 // Find Visitor by token, inorder to delete or checkout
 visitorSchema.statics.findByToken = function(token,cb){
     var visitor = this
-    jwt.verify(token,config.SECRET,function(err, decode){
+    // jwt.verify(token,config.SECRET,function(err, decode){
+        jwt.verify(token,process.env.SECRET,function(err, decode){
         // if everything gets decoded correctly, we want to grab the visitor id and find the visitor information
         //we will be finding the visitor by ID and by token
         visitor.findOne({"_id":decode, "token":token}, function(err,visitor){

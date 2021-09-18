@@ -14,7 +14,7 @@ class VisitorDetails extends Component {
     componentWillMount() {
         this.props.dispatch(getVisitors())
     }
-    
+
     // // show visitors
     // showVisitors = (visitors) => (
     //     visitors.visitors ?
@@ -58,13 +58,13 @@ class VisitorDetails extends Component {
             ))
         return (
             <div className="container">
-                    <input
-                        className="search-contacts"
-                        type="text"
-                        value={query}
-                        placeholder="Search by Name"
-                        onChange={(event) => this.updateQuery(event.target.value)}
-                    />
+                <input
+                    className="search-contacts"
+                    type="text"
+                    value={query}
+                    placeholder="Search by Name"
+                    onChange={(event) => this.updateQuery(event.target.value)}
+                />
                 <h1 className="tableHeading"> Visitors List</h1>
 
                 <table className="visitors">

@@ -29,6 +29,8 @@ const admin = require('./routes/admin')
 
 app.use(cookieParser())
 
+app.use(express.static(path.resolve(__dirname, "../client/build")))
+
 app.use('/api/visitor', visitor)
 app.use('/api/admin', admin)
 
@@ -54,13 +56,21 @@ app.use('/api/admin', admin)
 
 
 // ... other app.use middleware 
-app.use(express.static(path.join(__dirname, "client", "build")))
+// app.use(express.static(path.join(__dirname, "client", "build")))
+
+// // Right before your app.listen(), add this:
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+// });
+
+
+
 
 // Right before your app.listen(), add this:
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+app.get("/*", (req, res) => {
+    const path = require('path');
+    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
 });
-
 
 const PORT = process.env.PORT || 3001;
 

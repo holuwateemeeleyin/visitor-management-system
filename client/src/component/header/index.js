@@ -31,7 +31,7 @@ class Header extends Component {
                     onHideNav={()=>this.onHideNav()}
                 />
                 <Link to="/" className="logo">
-                    Em's Place
+                    Ems' Place
                 </Link>
             </header>
         )

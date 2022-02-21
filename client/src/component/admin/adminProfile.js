@@ -1,4 +1,5 @@
 import React from 'react'
+import './AdminProfile.css'
 
 const AdminProfile = (props) => {
     console.log(props);

@@ -13,17 +13,30 @@ const Home = () => {
         <div className="homeMobile_container-parent">
             <div className='homeMobile_container'>
                 <div className='container_text'>
-                    <h1>
-                        Welcome to <i>Ems'</i> Visitor Management System
-                    </h1>
-                    <p style={{ color: '#1a1f36', fontSize:'20px'}}>
-                        Our guests are important to us. We provide a way to save the stress of doing it traditional way.
-                    </p>
-                    <p><strong>Note:</strong> Your data will not be used for anything apart from record keeping</p>
+                    <Slide left>
+                        <h1>
+                            Welcome to <i>Ems'</i> Visitor Management System
+                        </h1>
+                    </Slide>
+                    <Zoom left cascade>
+                        <p style={{ color: '#1a1f36', fontSize: '20px' }}>
+                            Our guests are important to us. We provide a way to save the stress of doing it traditional way.
+                        </p>
+                    </Zoom>
+                    <Slide right>
+                        <p><strong>Note:</strong> Your data will not be used for anything apart from record keeping</p>
+                    </Slide>
+                    <Bounce>
+                        <Link to="/checkin" className="link-button">
+                            Check In
+                        </Link>
+                    </Bounce>
                 </div>
-                <div className='container_image'>
-                    <img src={homeViewImage} alt='visitorImage' />
-                </div>
+                <Flip>
+                    <div className='container_image'>
+                        <img src={homeViewImage} alt='visitorImage' />
+                    </div>
+                </Flip>
             </div>
             {/* <div className="container-row">
                 <div className="col-3 welcome">

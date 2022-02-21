@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faSignInAlt, faSignOutAlt, faUserAlt, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux'
+import './sidenav.css'
 
 const SideNavItems = ({admin}) => {
     const items = [

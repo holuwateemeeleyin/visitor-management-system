@@ -1,0 +1,41 @@
+.search-contacts{
+    align-items: center;
+    text-align: center;
+}
+.tableHeading {
+    text-align: center;
+}
+
+.visitors {
+    border-collapse: collapse;
+    border: 3px solid #ddd;
+    width: 100%;
+}
+
+.visitors thead,
+.visitors tbody {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr th {
+    background-color: #4caf50;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+
+tr td {
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+
+input {
+    width: auto;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}

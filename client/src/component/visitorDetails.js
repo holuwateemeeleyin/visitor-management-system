@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getVisitors } from './action'
 import moment from 'moment'
+import './visitorDetails.css'
+
 class VisitorDetails extends Component {
 
     state = {

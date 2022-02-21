@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { auth } from '../component/action'
-
+import './auth.css'
 export default function (ComposedClass, reload){
     class AuthenticationCheck extends Component {
         state = {

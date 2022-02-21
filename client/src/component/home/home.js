@@ -4,14 +4,28 @@ import Slide from 'react-reveal/Slide';
 import Bounce from 'react-reveal/Bounce'
 import Zoom from 'react-reveal/Zoom'
 import Flip from 'react-reveal/Flip'
-
+import './home.css'
+import homeViewImage from '../Assets/image2.png'
 
 const Home = () => {
 
     return (
-        <div className="home_container">
-            {/* <div className="container"> */}
-            <div className="container-row">
+        <div className="homeMobile_container-parent">
+            <div className='homeMobile_container'>
+                <div className='container_text'>
+                    <h1>
+                        Welcome to <i>Ems'</i> Visitor Management System
+                    </h1>
+                    <p style={{ color: '#1a1f36', fontSize:'20px'}}>
+                        Our guests are important to us. We provide a way to save the stress of doing it traditional way.
+                    </p>
+                    <p><strong>Note:</strong> Your data will not be used for anything apart from record keeping</p>
+                </div>
+                <div className='container_image'>
+                    <img src={homeViewImage} alt='visitorImage' />
+                </div>
+            </div>
+            {/* <div className="container-row">
                 <div className="col-3 welcome">
 
                     <Slide left>
@@ -42,7 +56,7 @@ const Home = () => {
                         <img src='../images/image2.png' alt='image1' className='responsive' />
                     </div>
                 </Flip>
-            </div>
+            </div> */}
         </div>
     )
 }

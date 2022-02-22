@@ -14,7 +14,10 @@
     font-size: 3.3rem;
     color: #009b1a;
     line-height: 55px;
-
+    margin-bottom: 5px;
+}
+.container_text p {
+    color: #1a1f36;
 }
 
 .link-button {

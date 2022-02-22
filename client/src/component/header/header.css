@@ -16,14 +16,26 @@
     flex-direction: row;
     justify-content: space-between;
     width: 45%;
+    font-size: 18px;
 }
 .navbar-link a {
     text-decoration: none;
-    color: #14eb00;
+    color: #aaa3a3;
 }
+
+.header-logo {
+    font-size: 18px;
+    font-family: 'Ranga', cursive;
+}
+.header-logo a{
+    text-decoration: none;
+    color: #aaa3a3;
+}
+
+
 
 @media screen and (max-width:768px) {
     .header_container-parent {
-        display: none;
+        visibility: hidden;
     }
 }

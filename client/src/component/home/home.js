@@ -19,12 +19,12 @@ const Home = () => {
                         </h1>
                     </Slide>
                     <Zoom left cascade>
-                        <p style={{ color: '#1a1f36', fontSize: '20px' }}>
+                        <p style={{ fontSize: '22px' }}>
                             Our guests are important to us. We provide a way to save the stress of doing it traditional way.
                         </p>
                     </Zoom>
                     <Slide right>
-                        <p><strong>Note:</strong> Your data will not be used for anything apart from record keeping</p>
+                        <p style={{ fontSize: '18px' }}><strong>Note:</strong> Your data will not be used for anything apart from record keeping</p>
                     </Slide>
                     <Bounce>
                         <Link to="/checkin" className="link-button">

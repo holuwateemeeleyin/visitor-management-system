@@ -16,26 +16,28 @@ class Header extends Component {
     render() {
         return (
             <header>
-                <div className="open_nav">
-                    <FontAwesomeIcon
-                        onClick={() => this.setState({ showNav: true })}
-                        // className="bars "
-                        icon={faBars}
-                        style={{
-                            color: '#008116',
-                            fontSize:'2em',
-                            cursor: 'pointer'
-                        }}
+                <div className='header_container'>
+                    <div className="open_nav">
+                        <FontAwesomeIcon
+                            onClick={() => this.setState({ showNav: true })}
+                            // className="bars "
+                            icon={faBars}
+                            style={{
+                                color: '#008116',
+                                fontSize: '2em',
+                                cursor: 'pointer'
+                            }}
+                        />
+                    </div>
+                    <Nav
+                        showNav={this.state.showNav}
+                        onHideNav={() => this.onHideNav()}
                     />
+                    <Link to="/" className="logo">
+                        {/* Ems' Place */}
+                        <img src={logo} alt='logo' width='70px' />
+                    </Link>
                 </div>
-                <Nav
-                    showNav={this.state.showNav}
-                    onHideNav={()=>this.onHideNav()}
-                />
-                <Link to="/" className="logo">
-                    {/* Ems' Place */}
-                    <img src={logo} alt='logo' width='70px'/>
-                </Link>
             </header>
         )
     }
